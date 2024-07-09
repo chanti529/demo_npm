@@ -41,6 +41,11 @@ jf config show
 ```
 jf rt ping
 ```
+Configure npm client to utilize artifactory's local and remote repositories by running the following command 
+
+```
+jf npmc
+```
 
 Now, run the npm client to install your preferred npm package using the various package.json files provided 
 
