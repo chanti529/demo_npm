@@ -1,1 +1,9 @@
-{"query":"query packageVersionDetails($type: String!, $name: String!, $version: String!) {\n  packageVersion(name: $name, type: $type, version: $version) {\n  version\n    published\n    vcsUrl\n    homepage\n    licenseInfo {\n      expression\n      licenses {\n        name\n        isSpdx\n      }\n    }\n    operationalInfo {\n      openSsf {\n        aggregatedScore\n      }\n      \n    }\n    vulnerabilities(first: 100) {\n      edges {\n        node {\n          name\n          severity\n          cvss {\n            preferredBaseScore\n          }\n          aliases\n          advisories {\n            name\n          }\n        }\n      }\n    }\n    securityInfo {\n      maliciousInfo {\n          knownToBeMalicious\n          disclosedByJfrog\n          removedFromIndex\n      }\n    }\n    homepage\n    package {\n      name\n      versions(first:50) {\n        totalCount\n      }\n    }\n      }\n}","variables":{"name":"debug","type":"npm","version":"4.3.5"},"operationName":"packageVersionDetails"}
+{
+   "query":"query packageVersionDetails($type: String!, $name: String!, $version: String!) {\n  packageVersion(name: $name, type: $type, version: $version) {\n  version\n    published\n    vcsUrl\n    homepage\n    licenseInfo {\n      expression\n      licenses {\n        name\n        isSpdx\n      }\n    }\n    operationalInfo {\n      openSsf {\n        aggregatedScore\n      }\n      \n    }\n    vulnerabilities(first: 100) {\n      edges {\n        node {\n          name\n          severity\n          cvss {\n            preferredBaseScore\n          }\n          aliases\n          advisories {\n            name\n          }\n        }\n      }\n    }\n    securityInfo {\n      maliciousInfo {\n          knownToBeMalicious\n          disclosedByJfrog\n          removedFromIndex\n      }\n    }\n    homepage\n    package {\n      name\n      versions(first:50) {\n        totalCount\n      }\n    }\n      }\n}",
+   "variables":{
+      "name":"debug",
+      "type":"npm",
+      "version":"4.3.5"
+   },
+   "operationName":"packageVersionDetails"
+}
