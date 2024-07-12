@@ -1,0 +1,35 @@
+query packagesAndVersions {
+  all_lodash_versions: package(type: "npm", name: "lodash") {
+    name
+    type
+    latestVersion {
+      version
+      published
+    }
+    versions(first: 130, orderBy: {field: PUBLISHED, direction: DESC}) {
+      totalCount
+      edges {
+        node {
+          version
+          published
+        }
+      }
+    }
+  }
+  specific_version: packageVersion(type: "npm", name: "lodash", version: "4.17.4") {
+    published
+    version
+    newer_versions: package {
+      versions(first: 100, where: {publishedGTE: "2016-12-31"}) {
+        totalCount
+        edges {
+          node {
+            version
+            published
+          }
+        }
+      }
+    }
+  }
+}
+
